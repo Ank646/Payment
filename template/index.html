@@ -1,0 +1,335 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>BOOK TICKETS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{%static 'css/style.css'%}">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">BOOK YOUR SEAT</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<div class="wrapper">
+						<div class="row mb-5">
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+			        		<div class="icon d-flex align-items-center justify-content-center">
+			        			<span class="fa fa-map-marker"></span>
+			        		</div>
+			        		<div class="text">
+				            <p><span>Address:</span>Old auditorium ,Opposite of library</p>
+				          </div>
+			          </div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+			        		<div class="icon d-flex align-items-center justify-content-center">
+			        			<span class="fa fa-microphone"></span>
+			        		</div>
+			        		<div class="text">
+				            <p><span>Speaker:</span> BILL GATES</p>
+				          </div>
+			          </div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+			        		<div class="icon d-flex align-items-center justify-content-center">
+			        			<span class="fa fa-calendar"></span>
+			        		</div>
+			        		<div class="text">
+				            <p><span>DATE:</span> 2nd October 2023</p>
+				          </div>
+			          </div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+			        		<div class="icon d-flex align-items-center justify-content-center">
+			        			<span class="fa fa-calendar"></span>
+			        		</div>
+			        		<div class="text">
+				            <p><span>Time:</span> 7:00 pm</a></p>
+				          </div>
+			          </div>
+							</div>
+							
+						</div>
+						<div class="row no-gutters">
+							<div class="col-md-7">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<h3 class="mb-4" id="h">TICKETS</h3>
+									<div id="form-message-warning" class="mb-4"></div> 
+				      		<div id="form-message-success" class="mb-4">
+				           Your ticket is being booked. Please wait!!!!!
+				      		</div>
+									<form method="POST" action="/" id="contactForm" name="contactForm" class="contactForm">
+										{% csrf_token %}
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="label" for="name">Full Name</label>
+													<input type="text" class="nm form-control" name="nm" id="nm" placeholder="Name">
+												</div>
+											</div>
+											<div class="col-md-6"> 
+												<div class="form-group">
+													<label class="label" for="email">Email Address</label>
+													<input type="email" class="em form-control" name="em" id="email" placeholder="Email">
+												</div>
+											</div>
+											<div class="col-md-6"> 
+												<div class="form-group">
+													<label class="label" for="college">College</label>
+													<input type="text" class="coll form-control" name="coll" id="college" placeholder="College">
+												</div>
+											</div>
+											
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="label" for="subject">Mobile no.</label>
+													<input type="number" class="form-control mno" name="mno" id="mob" placeholder="Subject">
+												</div>
+											</div>
+											<div class="col-md-12">
+												
+												<div class="buttonHolder">
+													
+													<div class="form-group">
+														<div id="count">
+															<label class="label" for="subject">No.of tickets.</label>
+													
+														<center><p class="tno" name="tno" id="no">1</p>
+													</center>
+													
+												<a  id="add" class="button tick"></a>
+												<a id="sub" class="button flower"></a>
+												</div>
+												</div>
+												  </div>
+												  	<style>.buttonHolder{
+													margin:80px auto;
+													width:400px;
+												  }
+												  #count{
+													display:inline-block;
+												  }
+												  
+												  #no{
+													background-color: rgb(227, 225, 225);
+													border-radius:100%;
+													margin-left: 40px;
+													padding:5px;
+													text-align: center;
+													font-size:20px;
+													border:none;
+													height:100%;
+													width:30%;
+							
+												  }
+												  #no:active{
+													border:none;
+												  }
+														  .button{
+															  background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+															  background-image: linear-gradient(top, #f4f1ee, #fff);
+															  border-radius: 50%;
+															  box-shadow: 0px 8px 10px 0px rgba(151, 148, 148, 0.3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
+															  float:left;
+															  height: 70px;
+															  margin-left:60px;
+															   position: relative;
+															  width: 70px;			
+															  -webkit-transition: all .1s linear;
+															  transition: all .1s linear;
+														  }
+												  
+														  .button:after{
+															  color:#e9e6e4;
+															  content: "";
+															  display: block;
+															  font-size: 30px;
+															  height: 30px;
+															  text-decoration: none;
+															  text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
+															  position: absolute;
+															  width: 30px;
+														  }
+												  
+												  
+														  .heart:after{
+															  content: "❤";
+															  left: 21px;
+															  top: 21px;
+														  }
+												  
+														  .flower:after{
+															  content: "−";
+															  padding:5px;
+															  
+															  font-weight: bolder;
+															  left: 23px;
+															  top: 19px;
+														  }
+												          body{
+															background-image:linear-gradient(white,grey);
+														  }
+														  .tick:after{
+															  content: "+";
+															  padding:3px;
+															  font-weight: bold;
+															  left:23px;
+															  top:20px;
+														  }
+												  .heading-section{
+													font-family: cursive;
+													font-size: 50px;
+												  }
+												  #h{
+													font-family: cursive;
+													font-size: 30px;
+													margin-left:100px;
+												  }
+												  		  .cross:after{
+															transform:rotate('45deg');
+															  content: "✖";
+															  left: 24px;
+															  top: 19px;
+														  }
+												  
+														  .button:hover{
+															  background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
+															  background-image: linear-gradient(top, #fff, #f4f1ee);
+															  color:#0088cc;
+														  }
+												  
+														  .heart:hover:after{
+															  color:#f94e66;
+															  text-shadow:0px 0px 6px #f94e66;
+														  }
+												  
+														  .flower:hover:after{
+															  color:#f99e4e;
+															  text-shadow:0px 0px 6px #f99e4e;
+														  }
+												  
+														  .tick:hover:after{
+															  color:#83d244;
+															  text-shadow:0px 0px 6px #83d244;
+														  }
+												  
+														  .cross:hover:after{
+															  color:#eb2f2f;
+															  text-shadow:0px 0px 6px #eb2f2f;
+														  }
+												  
+														  
+												  
+														  .button:active{
+															  background-image: -webkit-linear-gradient(top, #efedec, #f7f4f4);
+															  background-image: linear-gradient(top, #efedec, #f7f4f4);
+															  box-shadow: 0 3px 5px 0 rgba(136, 132, 132, 0.4), inset 0px -3px 1px 1px rgba(204,198,197,.5);
+														  }
+												  
+														  .button:active:after{
+															  color:#dbd2d2;
+															  text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+														  }</style>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													{{amount}}
+													<center><input type="submit" id="rzp-button1" value="BOOK" class="btn btn-primary">
+													</center>
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="col-md-5 d-flex align-items-stretch">
+								<div class="info-wrap w-100 p-5 img" style="background-image: url({%static 'images/bill.jpg'%});">
+			          </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+	</body>
+</html>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+let c=0
+													add=document.getElementById("add")
+													add.addEventListener('click',()=>{
+c++;
+document.getElementById("no").innerText=c;
+console.log(c)
+													})
+													sub=document.getElementById("sub")
+													sub.addEventListener('click',()=>{
+
+if(c<2)
+{
+	c=2;
+
+}
+c--;
+document.getElementById("no").innerText=c;
+console.log(c)
+
+													
+													})
+
+																						
+let no=document.getElementById("no").innerText
+										
+
+var options = {
+	
+    "key": "rzp_test_f3KO9cFrfsZwpG", // Enter the Key ID generated from the Dashboard
+    "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "TEDEX NITW",
+    "description": "Test Transaction",
+    "image": "{% static 'images/bill.jpg'%}",
+    "order_id": "{{orderr.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "callback_url": "http://127.0.0.1:8000/success",
+    "prefill": {
+        "name": "{{name}}",
+        "email":"{{email}}",
+        "contact":"{{mob}}",
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+document.getElementById('rzp-button1').onclick = function(e){
+
+console.log(c+3)	
+	rzp1.open();
+    e.preventDefault(c);
+}
+</script>
+
